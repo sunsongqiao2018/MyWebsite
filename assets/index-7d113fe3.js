@@ -413,19 +413,23 @@ Error generating stack: `+o.message+`
   margin-top: 2rem;
   min-height: 500px;
   max-height: 600px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    max-height: none;
+    gap: 1rem;
+  }
 `,AC=j.div`
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.5rem;
-  gap: 1rem;
-`,VC=j.div`
   color: #888;
   font-size: 1.1rem;
   line-height: 1.8;
   padding-right: 2rem;
+
+  @media (max-width: 768px) {
+    padding-right: 0;
+    order: 2;
+  }
 
   h3 {
     color: #fff;
@@ -439,7 +443,7 @@ Error generating stack: `+o.message+`
   p {
     margin-bottom: 1rem;
   }
-`,_C=j.div`
+`,VC=j.div`
   position: relative;
   width: 100%;
   height: 100%;
@@ -447,7 +451,13 @@ Error generating stack: `+o.message+`
   align-items: center;
   justify-content: center;
   padding: 1rem;
-`,DC=j(I.div)`
+
+  @media (max-width: 768px) {
+    order: 1;
+    height: auto;
+    padding: 0;
+  }
+`,_C=j(I.div)`
   width: 100%;
   height: 100%;
   max-height: 400px;
@@ -457,10 +467,26 @@ Error generating stack: `+o.message+`
   perspective: 1500px;
   transform-style: preserve-3d;
 
+  @media (max-width: 768px) {
+    max-height: 300px;
+  }
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+`,DC=j.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    margin-top: 1rem;
   }
 `,Sh=j(I.button)`
   background: rgba(255, 255, 255, 0.1);
@@ -485,7 +511,7 @@ Error generating stack: `+o.message+`
   border-radius: 20px;
   font-size: 0.9rem;
   backdrop-filter: blur(4px);
-`;function bC(){const e=w.useRef(null),{scrollYProgress:t}=jc();ot(t,[0,1],["0%","25%"]),ot(t,[0,1],["0%","-25%"]);const[n]=w.useState(Hr.map(u=>u.image)),[r,i]=w.useState(0),[o,s]=w.useState(1),a=()=>{s(-1),i(u=>u===0?n.length-1:u-1)},l=()=>{s(1),i(u=>u===n.length-1?0:u+1)};return k.jsxs(RC,{ref:e,children:[k.jsx(Qs,{}),k.jsx(LC,{children:k.jsxs(jC,{children:[k.jsxs(xh,{initial:{opacity:0,y:50},animate:{opacity:1,y:0},transition:{duration:.8},children:[k.jsx(wh,{children:"About Me"}),k.jsx($a,{children:"Hello! I'm Songqiao Sun, a passionate software engineer specializing in game development and immersive experiences. With a Master's degree in Computer Science, I've dedicated my career to pushing the boundaries of what's possible in interactive digital environments."}),k.jsx($a,{children:"My journey in technology began with a fascination for video games, which evolved into a deep interest in creating engaging digital experiences. Today, I work at the intersection of technology and creativity, developing solutions that combine technical excellence with user-centered design."}),k.jsx($a,{children:"When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or experimenting with game development frameworks."})]}),k.jsxs(xh,{initial:{opacity:0,y:50},animate:{opacity:1,y:0},transition:{duration:.8,delay:.2},children:[k.jsx(wh,{children:"About My Life"}),k.jsxs(MC,{children:[k.jsx(VC,{children:k.jsxs(I.div,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},transition:{duration:.3},children:[k.jsx("h3",{children:Hr[r].title}),k.jsx("p",{children:Hr[r].description})]},r)}),k.jsx(_C,{children:k.jsx(C0,{mode:"wait",children:k.jsx(DC,{initial:{opacity:0,rotateX:-15,rotateY:o*15,scale:.95},animate:{opacity:1,rotateX:0,rotateY:0,scale:1},exit:{opacity:0,rotateX:15,rotateY:o*-15,scale:.95},transition:{duration:.4,ease:"easeOut"},children:k.jsx("img",{src:Hr[r].image,alt:Hr[r].title})},r)})})]}),k.jsxs(AC,{children:[k.jsx(Sh,{onClick:a,whileHover:{scale:1.1},whileTap:{scale:.9},children:"←"}),k.jsxs(OC,{children:[r+1," / ",n.length]}),k.jsx(Sh,{onClick:l,whileHover:{scale:1.1},whileTap:{scale:.9},children:"→"})]})]})]})})]})}const NC=j.div`
+`;function bC(){const e=w.useRef(null),{scrollYProgress:t}=jc();ot(t,[0,1],["0%","25%"]),ot(t,[0,1],["0%","-25%"]);const[n]=w.useState(Hr.map(u=>u.image)),[r,i]=w.useState(0),[o,s]=w.useState(1),a=()=>{s(-1),i(u=>u===0?n.length-1:u-1)},l=()=>{s(1),i(u=>u===n.length-1?0:u+1)};return k.jsxs(RC,{ref:e,children:[k.jsx(Qs,{}),k.jsx(LC,{children:k.jsxs(jC,{children:[k.jsxs(xh,{initial:{opacity:0,y:50},animate:{opacity:1,y:0},transition:{duration:.8},children:[k.jsx(wh,{children:"About Me"}),k.jsx($a,{children:"Hello! I'm Songqiao Sun, a passionate software engineer specializing in game development and immersive experiences. With a Master's degree in Computer Science, I've dedicated my career to pushing the boundaries of what's possible in interactive digital environments."}),k.jsx($a,{children:"My journey in technology began with a fascination for video games, which evolved into a deep interest in creating engaging digital experiences. Today, I work at the intersection of technology and creativity, developing solutions that combine technical excellence with user-centered design."}),k.jsx($a,{children:"When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or experimenting with game development frameworks."})]}),k.jsxs(xh,{initial:{opacity:0,y:50},animate:{opacity:1,y:0},transition:{duration:.8,delay:.2},children:[k.jsx(wh,{children:"About My Life"}),k.jsxs(MC,{children:[k.jsx(AC,{children:k.jsxs(I.div,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},transition:{duration:.3},children:[k.jsx("h3",{children:Hr[r].title}),k.jsx("p",{children:Hr[r].description})]},r)}),k.jsx(VC,{children:k.jsx(C0,{mode:"wait",children:k.jsx(_C,{initial:{opacity:0,rotateX:-15,rotateY:o*15,scale:.95},animate:{opacity:1,rotateX:0,rotateY:0,scale:1},exit:{opacity:0,rotateX:15,rotateY:o*-15,scale:.95},transition:{duration:.4,ease:"easeOut"},children:k.jsx("img",{src:Hr[r].image,alt:Hr[r].title})},r)})})]}),k.jsxs(DC,{children:[k.jsx(Sh,{onClick:a,whileHover:{scale:1.1},whileTap:{scale:.9},children:"←"}),k.jsxs(OC,{children:[r+1," / ",n.length]}),k.jsx(Sh,{onClick:l,whileHover:{scale:1.1},whileTap:{scale:.9},children:"→"})]})]})]})})]})}const NC=j.div`
   min-height: 100vh;
   background: #0f0f0f;
   color: white;
@@ -502,6 +528,11 @@ Error generating stack: `+o.message+`
   grid-template-columns: 45% 55%;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
 `,IC=j(I.div)`
   padding: 4rem 6rem 4rem 4rem;
   display: flex;
@@ -515,21 +546,50 @@ Error generating stack: `+o.message+`
     rgba(15, 15, 15, 0.5) 60%,
     transparent
   );
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    align-items: center;
+    text-align: center;
+    background: rgba(15, 15, 15, 0.7);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
 `,FC=j.h2`
   font-size: clamp(2rem, 4vw, 3.5rem);
   background: linear-gradient(45deg, #fff, #888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media (max-width: 768px) {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+  }
 `,BC=j.p`
   color: #888;
   font-size: 1.1rem;
   line-height: 1.8;
   max-width: 600px;
+
+  @media (max-width: 768px) {
+    color: #bbb;
+    font-size: 1rem;
+    max-width: 100%;
+  }
 `,UC=j(I.div)`
   width: 100%;
   height: 100%;
   position: relative;
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: none;
+  }
 
   &::before {
     content: '';
@@ -559,6 +619,10 @@ Error generating stack: `+o.message+`
   flex-direction: column;
   gap: 1rem;
   z-index: 10;
+
+  @media (max-width: 768px) {
+    right: 1rem;
+  }
 `,WC=j(I.button)`
   width: 12px;
   height: 12px;
