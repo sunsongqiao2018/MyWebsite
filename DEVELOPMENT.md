@@ -11,6 +11,10 @@ The four-page React portfolio now uses an original industrial terminal layout in
 
 ## Log
 
+### 2026-09-12 — Natural-color portrait
+
+Responding to feedback that the monochrome portrait felt too somber, removed the grayscale filter and restored full image opacity. Moved the dark gradient toward the bottom so the face stays bright while caption text remains readable. Production build and visual preview passed; this update is prepared for the existing GitHub Pages site.
+
 ### 2026-09-12 — Deployed to GitHub Pages
 
 At the user's explicit request, published the validated build from source commit `6eb8e55` to the existing `gh-pages` branch, retaining the established `/MyWebsite/` URL and adding `.nojekyll`. Verified the public site serves the new `index-dc333fd8.js` build and inspected the rendered homepage: navigation, typography, and portrait load correctly. Live URL: https://sunsongqiao2018.github.io/MyWebsite/. The contact service was preserved; real email delivery remains untested.

@@ -384,14 +384,13 @@ main:focus {
   inset: 0;
   object-fit: cover;
   object-position: 50% 35%;
-  filter: grayscale(100%);
-  opacity: 0.88;
+  opacity: 1;
 }
 .portrait-panel:after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #171a191a 30%, #151817ed 100%);
+  background: linear-gradient(180deg, transparent 48%, #15181738 65%, #151817d9 100%);
   z-index: 1;
 }
 .portrait-grid {

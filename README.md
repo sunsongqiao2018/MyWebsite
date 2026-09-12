@@ -1,6 +1,6 @@
 # Songqiao Sun — Personal Portfolio
 
-A React portfolio with an Arknights-inspired industrial interface: a numbered navigation rail, monochrome portrait, condensed typography, signal-yellow accents, and structured project dossiers. Original photographs, projects, skills, and social destinations are retained. No game artwork or logos are included.
+A React portfolio with an Arknights-inspired industrial interface: a numbered navigation rail, natural-color portrait, condensed typography, signal-yellow accents, and structured project dossiers. Original photographs, projects, skills, and social destinations are retained. No game artwork or logos are included.
 
 ## Run locally
 
