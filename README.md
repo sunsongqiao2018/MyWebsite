@@ -18,7 +18,7 @@ npm run build
 npm run preview
 ```
 
-The output is in `dist/`. The existing GitHub Pages base path `/MyWebsite/` is preserved. Hash routes such as `/MyWebsite/#/projects?project=03` support directly opening and refreshing pages on static hosting, without server rewrites. The existing `npm run deploy` command publishes to GitHub Pages; this redesign has **not** been deployed.
+The output is in `dist/`. The existing GitHub Pages base path `/MyWebsite/` is preserved. Hash routes such as `/MyWebsite/#/projects?project=03` support directly opening and refreshing pages on static hosting, without server rewrites. The existing `npm run deploy` command publishes to GitHub Pages; this redesign is live at [sunsongqiao2018.github.io/MyWebsite](https://sunsongqiao2018.github.io/MyWebsite/).
 
 ## Edit content and design
 

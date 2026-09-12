@@ -2,14 +2,18 @@
 
 ## Current state
 
-The four-page React portfolio now uses an original industrial terminal layout inspired by Arknights. Source and production build are included in the redesign commit on `main`, with GitHub delivery authorized by the user. Website deployment has not been run. The GitHub Pages base remains `/MyWebsite/`; client routes now use hashes for static-host refresh support.
+The four-page React portfolio now uses an original industrial terminal layout inspired by Arknights. Source and production build are included in the redesign commit on `main`, with GitHub delivery authorized by the user. The redesign is live at https://sunsongqiao2018.github.io/MyWebsite/. The GitHub Pages base remains `/MyWebsite/`; client routes now use hashes for static-host refresh support.
 
 ## Next steps
 
-- Review the updated repository and deploy the website when ready.
+- Review the live site and collect feedback.
 - Confirm real EmailJS delivery on the deployment domain; no email was sent during verification.
 
 ## Log
+
+### 2026-09-12 — Deployed to GitHub Pages
+
+At the user's explicit request, published the validated build from source commit `6eb8e55` to the existing `gh-pages` branch, retaining the established `/MyWebsite/` URL and adding `.nojekyll`. Verified the public site serves the new `index-dc333fd8.js` build and inspected the rendered homepage: navigation, typography, and portrait load correctly. Live URL: https://sunsongqiao2018.github.io/MyWebsite/. The contact service was preserved; real email delivery remains untested.
 
 ### 2026-09-12 — GitHub delivery
 
