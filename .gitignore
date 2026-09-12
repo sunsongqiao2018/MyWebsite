@@ -1,0 +1,4 @@
+node_modules/
+.tooling/
+.vite-cache/
+*.local
