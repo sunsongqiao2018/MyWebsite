@@ -2,7 +2,7 @@
 
 ## Current state
 
-The four-page React portfolio now includes a spatial research archive inspired by the user-provided Arknights/Rhine Lab references, with individual directly linked project-file keys and persistent light/dark themes. Source and production build are included in the redesign commit on `main`, with GitHub delivery authorized by the user. The redesign is live at https://sunsongqiao2018.github.io/MyWebsite/. The GitHub Pages base remains `/MyWebsite/`; client routes now use hashes for static-host refresh support.
+The portfolio now uses a profile-first layout with geometric line-guided page transitions and persistent light/dark themes. The piano archive has been removed. The live site remains https://sunsongqiao2018.github.io/MyWebsite/.
 
 ## Next steps
 
@@ -10,6 +10,10 @@ The four-page React portfolio now includes a spatial research archive inspired b
 - Confirm real EmailJS delivery on the deployment domain; no email was sent during verification.
 
 ## Log
+
+### 2026-09-12 — Remove piano archive; connect pages with geometry
+
+The user rejected the piano design and requested more natural page changes using geometric line segments. Removed LabArchive and its obsolete 3D/file styles, restored the profile-first homepage, and added short sequential fade/translate transitions using the existing Framer Motion dependency. A thin SVG polyline draws across the shared page edge, while the sidebar marker moves to the current destination. Scroll resets after the outgoing page exits. Reduced-motion preferences disable the animated effects. Light/dark themes and the natural-color portrait remain. Production build, sequential navigation, browser Back, single-page rendering, and mobile menu/navigation were verified; no browser errors or mobile horizontal overflow were observed. Source commit: 0b8f802; published to the existing GitHub Pages branch.
 
 ### 2026-09-12 — One key, one project file
 

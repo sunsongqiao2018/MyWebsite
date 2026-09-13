@@ -1,6 +1,6 @@
 # Songqiao Sun — Personal Portfolio
 
-A React portfolio with an Arknights-inspired spatial laboratory interface: three directly linked 3D project-file keys, persistent light/dark themes, geometric construction lines, a numbered navigation rail, natural-color portrait, condensed typography, signal-yellow accents, and structured project dossiers. Original photographs, projects, skills, and social destinations are retained. No game artwork or logos are included.
+A React portfolio with an Arknights-inspired spatial laboratory interface: profile-first pages with geometric line-guided transitions, persistent light/dark themes, geometric construction lines, a numbered navigation rail, natural-color portrait, condensed typography, signal-yellow accents, and structured project dossiers. Original photographs, projects, skills, and social destinations are retained. No game artwork or logos are included.
 
 ## Run locally
 
@@ -24,7 +24,6 @@ The output is in `dist/`. The existing GitHub Pages base path `/MyWebsite/` is p
 
 - `src/data.js`: project descriptions, screenshots, categories, technologies, and skills.
 - `src/pages/`: Overview, About, Projects, and Contact.
-- `src/components/LabArchive.jsx`: individual CSS 3D project files, direct links, and flat-view control.
 - `src/components/ThemeToggle.jsx`: persisted global theme selection.
 - `src/components/Navbar.jsx`: shared desktop navigation and mobile menu.
 - `src/styles/global.css`: design tokens, shared layouts, breakpoints, and reduced-motion styling.
