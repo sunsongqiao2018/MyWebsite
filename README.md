@@ -1,6 +1,6 @@
 # Songqiao Sun — Personal Portfolio
 
-A React portfolio with an Arknights-inspired spatial laboratory interface: profile-first pages with geometric line-guided transitions, persistent light/dark themes, geometric construction lines, a numbered navigation rail, natural-color portrait, condensed typography, signal-yellow accents, and structured project dossiers. Original photographs, projects, skills, and social destinations are retained. No game artwork or logos are included.
+A React portfolio with an Arknights-inspired spatial laboratory interface: profile-first pages with element-anchored transitions connecting navigation, headings, and content panels, persistent light/dark themes, geometric construction lines, a numbered navigation rail, natural-color portrait, condensed typography, signal-yellow accents, and structured project dossiers. Original photographs, projects, skills, and social destinations are retained. No game artwork or logos are included.
 
 ## Run locally
 

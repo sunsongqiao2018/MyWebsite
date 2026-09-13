@@ -2,7 +2,7 @@
 
 ## Current state
 
-The portfolio now uses a profile-first layout with geometric line-guided page transitions and persistent light/dark themes. The piano archive has been removed. The live site remains https://sunsongqiao2018.github.io/MyWebsite/.
+The portfolio now uses a profile-first layout with element-anchored navigation-to-heading-to-panel transitions and persistent light/dark themes. The piano archive has been removed. The live site remains https://sunsongqiao2018.github.io/MyWebsite/.
 
 ## Next steps
 
@@ -10,6 +10,10 @@ The portfolio now uses a profile-first layout with geometric line-guided page tr
 - Confirm real EmailJS delivery on the deployment domain; no email was sent during verification.
 
 ## Log
+
+### 2026-09-12 — Connect geometry to page content
+
+Replaced the arbitrary viewport sweep with measured SVG connectors from active navigation to the heading and first content panel. Content enters in sequence as the lines arrive; settled lines become subtle structural edges. Endpoints follow entrance movement, scroll, resize and font loading; mobile starts from the menu control. Reduced-motion preferences disable the effects. Fixed measurement timing after container mounting. Production build, desktop navigation and endpoint alignment, mobile layout and overflow checks passed with no browser errors. See [ElementConnections](src/components/ElementConnections.jsx) and [ConnectedPage](src/components/ConnectedPage.jsx).
 
 ### 2026-09-12 — Make page transitions clearly visible
 
