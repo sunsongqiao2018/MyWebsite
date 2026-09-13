@@ -18,23 +18,44 @@ function PageRoutes() {
   const reducedMotion = useReducedMotion()
   return (
     <>
-      <svg
+      <div
         key={location.pathname}
-        className="route-connector"
-        viewBox="0 0 1000 24"
-        preserveAspectRatio="none"
+        className="route-choreography"
         aria-hidden="true"
       >
-        <path pathLength="1" d="M0 12H36L47 2H180L192 12H990" />
-        <circle cx="990" cy="12" r="3" />
-      </svg>
-      <AnimatePresence mode="wait" initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
+        <div className="route-sweep" />
+        <svg
+          className="route-geometry"
+          viewBox="0 0 1000 700"
+          preserveAspectRatio="none"
+        >
+          <path pathLength="1" d="M0 110H210L345 245H1000" />
+          <path pathLength="1" d="M0 520H610L755 375H1000" />
+          <path pathLength="1" d="M80 0V155L235 310V700" />
+        </svg>
+      </div>
+      <AnimatePresence
+        mode="wait"
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
         <motion.div
+          className="route-content"
           key={location.pathname}
-          initial={reducedMotion ? false : { opacity: 0, y: 7 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={reducedMotion ? { opacity: 1 } : { opacity: 0, y: -3 }}
-          transition={{ duration: reducedMotion ? 0 : 0.18, ease: 'easeOut' }}
+          initial={reducedMotion ? false : { opacity: 0, x: 28 }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: reducedMotion ? 0 : 0.55,
+              ease: [0.16, 1, 0.3, 1],
+            },
+          }}
+          exit={
+            reducedMotion
+              ? { opacity: 1 }
+              : { opacity: 0, x: -14, transition: { duration: 0.2 } }
+          }
           onAnimationComplete={() =>
             document.querySelector('main')?.focus({ preventScroll: true })
           }

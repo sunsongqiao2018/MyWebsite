@@ -11,6 +11,10 @@ The portfolio now uses a profile-first layout with geometric line-guided page tr
 
 ## Log
 
+### 2026-09-12 — Make page transitions clearly visible
+
+User feedback was that the prior transition was barely noticeable. Replaced the small top-edge trace with a full content-area geometric sweep and three staggered connector lines that fade out after 1.15 seconds. Increased incoming page movement to 28px with a 0.55-second eased entrance, retained a short outgoing fade, and staggered page panels vertically. Overlay is decorative and pointer-transparent; reduced-motion preferences still bypass movement. Verified browser reduced-motion is off, route navigation and settled layouts work, and production build passes. Removed the obsolete top-edge animation styles.
+
 ### 2026-09-12 — Remove piano archive; connect pages with geometry
 
 The user rejected the piano design and requested more natural page changes using geometric line segments. Removed LabArchive and its obsolete 3D/file styles, restored the profile-first homepage, and added short sequential fade/translate transitions using the existing Framer Motion dependency. A thin SVG polyline draws across the shared page edge, while the sidebar marker moves to the current destination. Scroll resets after the outgoing page exits. Reduced-motion preferences disable the animated effects. Light/dark themes and the natural-color portrait remain. Production build, sequential navigation, browser Back, single-page rendering, and mobile menu/navigation were verified; no browser errors or mobile horizontal overflow were observed. Source commit: 0b8f802; published to the existing GitHub Pages branch.
