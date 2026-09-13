@@ -8,11 +8,9 @@ import {
 } from 'react-icons/fi'
 import profile from '../assets/profileimage.jpeg'
 import { projects } from '../data'
-import LabArchive from '../components/LabArchive'
 export default function Home() {
   return (
     <div className="page home-page">
-      <LabArchive />
       <div className="page-meta">
         <span>
           <i className="status-dot" /> PERSONAL PORTFOLIO
@@ -22,7 +20,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-copy">
           <div className="eyebrow">SOFTWARE ENGINEER & GAME DEVELOPER</div>
-          <h2 className="profile-headline">
+          <h1>
             BUILDING
             <br />
             WORLDS<span className="yellow">.</span>
@@ -30,7 +28,7 @@ export default function Home() {
             <span className="outline-text">CONNECTING</span>
             <br />
             PEOPLE<span className="yellow">.</span>
-          </h2>
+          </h1>
           <p className="hero-description">
             I’m Songqiao Sun. I turn code into immersive
             <br className="desktop-break" /> experiences — from multiplayer VR

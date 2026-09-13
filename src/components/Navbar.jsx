@@ -58,7 +58,16 @@ export default function Navbar() {
         }}
       >
         <div className="rail-label">DIRECTORY / 04</div>
-        <nav id="primary-navigation" aria-label="Main navigation">
+        <nav
+          id="primary-navigation"
+          aria-label="Main navigation"
+          style={{
+            '--nav-index': Math.max(
+              0,
+              entries.findIndex(([path]) => path === pathname),
+            ),
+          }}
+        >
           {entries.map(([path, label, Icon], i) => (
             <NavLink key={path} to={path} onClick={() => setOpen(false)}>
               <span className="nav-number">0{i + 1}</span>
