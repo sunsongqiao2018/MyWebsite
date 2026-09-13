@@ -1685,94 +1685,170 @@ main:focus {
     transition: none;
   }
 }
-/* The route signal travels through actual navigation, title, and panel anchors. */
-.element-connections {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+
+/* Geometry is part of the content: the moving panel edge reveals its surface. */
+.route-content h1 {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  padding-bottom: 12px;
+  animation: title-unfold 0.65s cubic-bezier(0.22, 0.7, 0.25, 1) both;
+}
+.route-content h1::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  background: var(--yellow);
+  transform-origin: left;
+  animation: edge-extend 0.65s cubic-bezier(0.22, 0.7, 0.25, 1) both;
+}
+.route-content
+  :is(
+    .about-grid > div,
+    .project-detail,
+    .contact-form,
+    .contact-socials,
+    .expertise,
+    .project-card
+  ) {
+  position: relative;
+  --frame-delay: 0.42s;
+  animation: surface-unfold 1s var(--frame-delay) cubic-bezier(0.4, 0, 0.2, 1)
+    backwards;
+}
+.route-content
+  :is(
+    .about-grid > div,
+    .project-detail,
+    .contact-form,
+    .contact-socials,
+    .expertise,
+    .project-card
+  )::after {
+  content: '';
+  position: absolute;
+  z-index: 4;
   pointer-events: none;
-  z-index: 26;
-  fill: none;
-  stroke: var(--yellow);
-  stroke-width: 1.25;
-  animation: connection-settle 1.7s ease-out both;
+  left: 0;
+  right: 0;
+  top: calc(100% - 2px);
+  height: 2px;
+  background: var(--yellow);
+  transform-origin: left;
+  animation: surface-edge 1s var(--frame-delay) cubic-bezier(0.4, 0, 0.2, 1)
+    both;
+  transition:
+    height 0.2s ease,
+    opacity 0.2s ease;
 }
-.connection-step {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: anchor-draw 0.4s ease-out both;
+.route-content
+  :is(
+    .about-grid > div:nth-child(2),
+    .contact-form,
+    .expertise:nth-child(2),
+    .project-card:nth-child(2)
+  ) {
+  --frame-delay: 0.58s;
 }
-.connection-step.step-1 {
-  animation-delay: 0.32s;
+.route-content :is(.expertise:nth-child(3), .project-card:nth-child(3)) {
+  --frame-delay: 0.74s;
 }
-.connection-step.step-2 {
-  animation-delay: 0.65s;
+.route-content
+  :is(
+    .project-card:hover,
+    .project-card:focus-visible,
+    .contact-form:focus-within
+  )::after {
+  height: 4px;
 }
-.element-connections circle,
-.element-connections rect {
-  fill: var(--yellow);
-  stroke: none;
+.route-content .project-selector button {
+  animation: selector-unfold 0.5s 0.3s both;
 }
-.heading-node {
-  animation: anchor-node 0.25s 0.25s both;
+.route-content .project-selector button:nth-child(2) {
+  animation-delay: 0.4s;
 }
-.panel-node {
-  animation: anchor-node 0.25s 0.65s both;
+.route-content .project-selector button:nth-child(3) {
+  animation-delay: 0.5s;
 }
-.route-content .page > .page-meta {
-  animation: linked-panel 0.3s both;
+.route-content .project-selector button {
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
 }
-.route-content .page > .page-heading,
-.route-content .page > .hero {
-  animation: linked-panel 0.45s 0.28s both;
+.route-content .project-selector button[aria-pressed='true'] {
+  box-shadow: inset 0 -4px 0 var(--yellow);
 }
-.route-content .page > .about-grid,
-.route-content .page > .project-selector,
-.route-content .page > .contact-layout,
-.route-content .page > .expertise-strip {
-  animation: linked-panel 0.5s 0.65s both;
+.sidebar nav a.active {
+  animation: navigation-fill 0.4s ease-out;
 }
-.route-content .page > .project-detail {
-  animation: linked-panel 0.5s 0.82s both;
-}
-@keyframes anchor-draw {
-  to {
-    stroke-dashoffset: 0;
+@keyframes surface-unfold {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 2px, 0 2px);
   }
-}
-@keyframes anchor-node {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes connection-settle {
-  0%,
-  65% {
-    opacity: 0.85;
+  25% {
+    clip-path: polygon(0 0, 100% 0, 100% 2px, 0 2px);
   }
   100% {
-    opacity: 0.25;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
-@keyframes linked-panel {
+@keyframes surface-edge {
+  0% {
+    top: 0;
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  25% {
+    top: 0;
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    top: calc(100% - 2px);
+    transform: scaleX(1);
+    opacity: 0.5;
+  }
+}
+@keyframes title-unfold {
   from {
-    opacity: 0;
-    transform: translateY(10px);
+    clip-path: inset(100% 0 0);
+    transform: translateY(12px);
   }
   to {
-    opacity: 1;
+    clip-path: inset(0);
     transform: translateY(0);
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .element-connections {
-    display: none;
+@keyframes edge-extend {
+  from {
+    transform: scaleX(0);
   }
-  .route-content .page > * {
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes selector-unfold {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+@keyframes navigation-fill {
+  from {
+    box-shadow: inset 0 -2px 0 var(--yellow);
+  }
+  to {
+    box-shadow: inset 210px -2px 0 transparent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .route-content *,
+  .route-content *::after,
+  .sidebar nav a.active {
     animation: none !important;
   }
 }

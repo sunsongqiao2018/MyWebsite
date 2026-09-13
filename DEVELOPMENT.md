@@ -2,7 +2,7 @@
 
 ## Current state
 
-The portfolio now uses a profile-first layout with element-anchored navigation-to-heading-to-panel transitions and persistent light/dark themes. The piano archive has been removed. The live site remains https://sunsongqiao2018.github.io/MyWebsite/.
+The portfolio now uses a profile-first layout with content-edge reveal transitions and persistent light/dark themes. The piano archive has been removed. The live site remains https://sunsongqiao2018.github.io/MyWebsite/.
 
 ## Next steps
 
@@ -10,6 +10,10 @@ The portfolio now uses a profile-first layout with element-anchored navigation-t
 - Confirm real EmailJS delivery on the deployment domain; no email was sent during verification.
 
 ## Log
+
+### 2026-09-12 — Make geometry reveal the elements themselves
+
+User feedback: measured connector lines still felt separate from the content. Removed the SVG overlay and its measurement component. Actual heading underlines now reveal headings; panel top edges draw across then travel downward while the same clipping boundary opens the panel content. About panels are staggered, project selection unfolds the newly keyed project article, and selected controls retain an inset edge. Panel clipping releases after entrance to preserve focus outlines and shadows. Production build, initial/intermediate and settled desktop views, project selection and mobile visual/overflow checks passed with no browser errors. Reduced-motion styling bypasses animations. See [global.css](src/styles/global.css).
 
 ### 2026-09-12 — Connect geometry to page content
 
