@@ -2174,3 +2174,277 @@ main:focus {
     transform: translateZ(20px);
   }
 }
+/* Each physical file is one direct project link. */
+.project-files {
+  min-height: 780px;
+}
+.file-instruction {
+  position: absolute;
+  right: 42px;
+  top: 63px;
+  z-index: 3;
+  border-top: 1px solid var(--lab-line);
+  width: 210px;
+  padding-top: 12px;
+}
+.file-instruction > span {
+  font: 8px var(--mono);
+  letter-spacing: 1px;
+  color: var(--lab-subtle);
+}
+.file-instruction p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.file-instruction strong {
+  font-weight: 500;
+}
+.project-file-stage {
+  z-index: 2;
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  top: 300px;
+  bottom: 85px;
+  perspective: 1500px;
+}
+.project-file-rack {
+  height: 100%;
+  max-width: 850px;
+  margin: auto;
+  display: flex;
+  gap: 16px;
+  transform-style: preserve-3d;
+  transform: rotateX(16deg) rotateY(-9deg) rotateZ(-5deg);
+  transition: transform 0.5s;
+}
+.project-file {
+  position: relative;
+  display: block;
+  flex: 1;
+  min-width: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  color: var(--lab-ink);
+}
+.project-file:hover,
+.project-file:focus-visible {
+  transform: translateY(-38px) translateZ(30px);
+  z-index: 2;
+  outline-offset: 8px;
+}
+.file-face {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 18px;
+  background: var(--key-top);
+  border: 1px solid var(--lab-line);
+  box-shadow: 9px 17px 17px #0002;
+}
+.file-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 10px var(--mono);
+  letter-spacing: 1px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--lab-line);
+}
+.file-tab svg {
+  font-size: 20px;
+}
+.file-face img {
+  height: 112px;
+  width: 100%;
+  object-fit: cover;
+  margin: 17px 0 15px;
+  filter: saturate(0.8);
+}
+.file-category {
+  font: 8px var(--mono);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--lab-subtle);
+}
+.file-face h2 {
+  font: 500 25px/1.08 var(--display);
+  margin: 8px 0 12px;
+}
+.file-tech {
+  font: 8px var(--mono);
+  color: var(--lab-subtle);
+  line-height: 1.5;
+}
+.file-enter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 16px;
+  font: 9px var(--mono);
+}
+.file-enter svg {
+  font-size: 19px;
+}
+.project-file:hover .file-enter,
+.project-file:focus-visible .file-enter {
+  color: var(--lab-accent);
+}
+.file-thickness {
+  position: absolute;
+  right: -18px;
+  top: 0;
+  width: 18px;
+  height: 100%;
+  transform-origin: left;
+  transform: rotateY(90deg);
+  background: var(--key-edge);
+}
+.file-foot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -18px;
+  height: 18px;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  background: var(--key-front);
+  font: 7px var(--mono);
+  padding: 4px 12px;
+  color: var(--lab-subtle);
+}
+.file-bottom-note {
+  font: 8px var(--mono);
+  letter-spacing: 1px;
+  color: var(--lab-subtle);
+}
+.project-files.is-flat .project-file-rack {
+  transform: none;
+}
+.project-files.is-flat .file-thickness,
+.project-files.is-flat .file-foot {
+  display: none;
+}
+.project-files.is-flat .project-file:hover,
+.project-files.is-flat .project-file:focus-visible {
+  transform: translateY(-12px);
+}
+@media (max-width: 1100px) {
+  .project-file-stage {
+    left: 42px;
+    right: 42px;
+  }
+  .file-face {
+    padding: 14px;
+  }
+  .file-face h2 {
+    font-size: 22px;
+  }
+  .file-instruction {
+    right: 28px;
+    width: 170px;
+  }
+}
+@media (max-width: 700px) {
+  .project-files {
+    min-height: 0;
+    padding-bottom: 25px;
+  }
+  .project-files .lab-title {
+    position: relative;
+    inset: auto;
+    margin: 30px 22px 0;
+  }
+  .file-instruction {
+    position: relative;
+    inset: auto;
+    width: auto;
+    margin: 24px 22px 0;
+  }
+  .file-instruction p {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+  .file-instruction p br {
+    display: none;
+  }
+  .file-instruction p strong {
+    margin-left: 7px;
+  }
+  .project-file-stage {
+    position: relative;
+    inset: auto;
+    margin: 35px 30px 45px;
+    perspective: 1200px;
+  }
+  .project-file-rack {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transform: rotateY(-7deg);
+    height: auto;
+  }
+  .project-file {
+    min-height: 290px;
+    flex: auto;
+  }
+  .file-face {
+    min-height: 290px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 14px;
+    padding: 18px;
+  }
+  .file-tab {
+    grid-column: 1/-1;
+  }
+  .file-face img {
+    grid-column: 1;
+    grid-row: 2/5;
+    height: 150px;
+    margin: 0;
+  }
+  .file-category {
+    grid-column: 2;
+    align-self: end;
+  }
+  .file-face h2 {
+    grid-column: 2;
+    font-size: 24px;
+    margin: 0;
+  }
+  .file-tech {
+    grid-column: 2;
+  }
+  .file-enter {
+    grid-column: 1/-1;
+    padding-top: 8px;
+    margin-top: 0;
+  }
+  .project-file:hover,
+  .project-file:focus-visible {
+    transform: translateY(-7px) translateZ(15px);
+  }
+  .project-files .lab-bottom {
+    position: relative;
+    inset: auto;
+    margin: 0 22px;
+    align-items: center;
+  }
+  .file-bottom-note {
+    font-size: 7px;
+    letter-spacing: 0;
+    max-width: 155px;
+    text-align: right;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-file:hover,
+  .project-file:focus-visible {
+    transform: none;
+    outline: 2px solid var(--lab-accent);
+  }
+}

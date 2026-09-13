@@ -2,7 +2,7 @@
 
 ## Current state
 
-The four-page React portfolio now includes a spatial research archive inspired by the user-provided Arknights/Rhine Lab references, with selectable piano-key project banks and persistent light/dark themes. Source and production build are included in the redesign commit on `main`, with GitHub delivery authorized by the user. The redesign is live at https://sunsongqiao2018.github.io/MyWebsite/. The GitHub Pages base remains `/MyWebsite/`; client routes now use hashes for static-host refresh support.
+The four-page React portfolio now includes a spatial research archive inspired by the user-provided Arknights/Rhine Lab references, with individual directly linked project-file keys and persistent light/dark themes. Source and production build are included in the redesign commit on `main`, with GitHub delivery authorized by the user. The redesign is live at https://sunsongqiao2018.github.io/MyWebsite/. The GitHub Pages base remains `/MyWebsite/`; client routes now use hashes for static-host refresh support.
 
 ## Next steps
 
@@ -10,6 +10,10 @@ The four-page React portfolio now includes a spatial research archive inspired b
 - Confirm real EmailJS delivery on the deployment domain; no email was sent during verification.
 
 ## Log
+
+### 2026-09-12 — One key, one project file
+
+The user clarified that every key should represent an individual file and link directly to a relevant project. Replaced the thirty decorative bars and selection/readout workflow in [LabArchive](src/components/LabArchive.jsx) with three independent extruded project links. Each shows its own screenshot, title, and technology stack, pulls out alone on hover/focus, and opens its corresponding project in one click. Mobile presents the same files as readable independent cards. Kept light/dark themes, flat-view option, and the natural-color portrait. Production build and desktop/mobile visual checks passed; all three direct links and mobile Enter activation were verified, with no horizontal overflow at 320px.
 
 ### 2026-09-12 — Spatial laboratory archive
 
