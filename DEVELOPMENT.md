@@ -2,7 +2,7 @@
 
 ## Current state
 
-The four-page React portfolio now uses an original industrial terminal layout inspired by Arknights. Source and production build are included in the redesign commit on `main`, with GitHub delivery authorized by the user. The redesign is live at https://sunsongqiao2018.github.io/MyWebsite/. The GitHub Pages base remains `/MyWebsite/`; client routes now use hashes for static-host refresh support.
+The four-page React portfolio now includes a spatial research archive inspired by the user-provided Arknights/Rhine Lab references, with selectable piano-key project banks and persistent light/dark themes. Source and production build are included in the redesign commit on `main`, with GitHub delivery authorized by the user. The redesign is live at https://sunsongqiao2018.github.io/MyWebsite/. The GitHub Pages base remains `/MyWebsite/`; client routes now use hashes for static-host refresh support.
 
 ## Next steps
 
@@ -10,6 +10,12 @@ The four-page React portfolio now uses an original industrial terminal layout in
 - Confirm real EmailJS delivery on the deployment domain; no email was sent during verification.
 
 ## Log
+
+### 2026-09-12 — Spatial laboratory archive
+
+Upgraded the portfolio based on the user's three UI references: a new [LabArchive](src/components/LabArchive.jsx) presents the three real projects as thirty extruded CSS piano keys grouped into selectable banks. Hover/focus and selection lift the geometry; the project readout and Open Project link track selection. An untransformed file dock supports touch and keyboard selection, with a 3D/flat view switch. Added original SVG construction lines, circles, registration marks, and connected panel rules. [ThemeToggle](src/components/ThemeToggle.jsx) provides persistent light laboratory and dark industrial themes across all four pages. Kept the portrait in natural color and all existing content and contact functionality.
+
+Validation: production build passed; visually checked light/dark desktop archive, 390px mobile archive, and light contact layout. Tested project selection through both physical keys and the dock, project detail navigation, flat-view toggle, and theme persistence after reload. All four routes at 320px and 768px had no horizontal overflow; browser error log was empty. Uses CSS/SVG geometry without a new rendering dependency or copied game assets. Prepared for the existing GitHub Pages deployment.
 
 ### 2026-09-12 — Natural-color portrait
 

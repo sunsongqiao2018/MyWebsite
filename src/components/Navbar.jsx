@@ -1,5 +1,6 @@
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import ThemeToggle from './ThemeToggle'
 import {
   FiArrowUpRight,
   FiGrid,
@@ -36,6 +37,7 @@ export default function Navbar() {
         <Link className="top-contact" to="/contact">
           LET’S CONNECT <FiArrowUpRight />
         </Link>
+        <ThemeToggle />
         <button
           className="menu-toggle"
           aria-label={open ? 'Close navigation' : 'Open navigation'}
