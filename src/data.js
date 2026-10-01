@@ -19,7 +19,7 @@ export const skills = [
 ]
 export const projects = [
   {
-    id: '04',
+    id: '01',
     title: 'Mahjong Zero',
     category: 'Web multiplayer',
     short: 'Riichi strategy. Shared tables. Original worlds.',
@@ -31,7 +31,7 @@ export const projects = [
     sourceUrl: 'https://github.com/sunsongqiao2018/mahjongZero',
   },
   {
-    id: '01',
+    id: '02',
     title: 'VR Multiplayer Casino Game',
     category: 'Virtual reality',
     short: 'Real connections. Virtual worlds.',
@@ -41,7 +41,7 @@ export const projects = [
     technologies: ['Unity', 'C#', 'VR', 'Photon'],
   },
   {
-    id: '02',
+    id: '03',
     title: 'Slot Machine Game',
     category: 'Game development',
     short: 'Built to play. Engineered to perform.',
@@ -51,7 +51,7 @@ export const projects = [
     technologies: ['Unity', 'C#', '.NET', 'Mathematics'],
   },
   {
-    id: '03',
+    id: '04',
     title: 'Immersive Kinect Gallery Experience',
     category: 'Interactive experience',
     short: 'Movement becomes the interface.',

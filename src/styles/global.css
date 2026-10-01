@@ -790,14 +790,6 @@ main:focus {
   max-height: 560px;
   object-fit: contain;
 }
-.image-label {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  font: 10px var(--mono);
-  padding: 8px;
-  background: #131615e6;
-}
 .image-controls {
   position: absolute;
   bottom: 18px;

@@ -47,7 +47,6 @@ export default function Projects() {
             src={project.images[imageIndex] || project.images[0]}
             alt={`${project.title} — view ${imageIndex + 1}`}
           />
-          <span className="image-label">PROJECT / {project.id}</span>
           {project.images.length > 1 && (
             <div className="image-controls">
               {project.images.map((image, i) => (
