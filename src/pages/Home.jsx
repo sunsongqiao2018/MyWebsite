@@ -103,7 +103,9 @@ export default function Home() {
       <section className="selected-work">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">PROJECT ARCHIVE / 01–03</span>
+            <span className="eyebrow">
+              PROJECT ARCHIVE / {String(projects.length).padStart(2, '0')} ENTRIES
+            </span>
             <h2>
               Selected work<span className="yellow"> /</span>
             </h2>

@@ -2,6 +2,8 @@ import project1 from './assets/projects/project1.jpg'
 import project2 from './assets/projects/project2.png'
 import project3 from './assets/projects/project3_1.png'
 import project3Detail from './assets/projects/project3_2.png'
+import mahjongLobby from './assets/projects/mahjong-zero-lobby.png'
+import mahjongTable from './assets/projects/mahjong-zero-table.png'
 export const skills = [
   'C#',
   'ASP.NET',
@@ -16,6 +18,18 @@ export const skills = [
   'Test Automation',
 ]
 export const projects = [
+  {
+    id: '04',
+    title: 'Mahjong Zero',
+    category: 'Web multiplayer',
+    short: 'Riichi strategy. Shared tables. Original worlds.',
+    description:
+      'A browser-based riichi mahjong game with local bot matches, private multiplayer rooms, and a 3D table. Built with React and TypeScript, Three.js rendering, and an authoritative Colyseus server backed by a shared game and scoring engine.',
+    images: [mahjongLobby, mahjongTable],
+    technologies: ['React', 'TypeScript', 'Three.js', 'Colyseus'],
+    liveUrl: 'https://mahjong-zero.vercel.app/',
+    sourceUrl: 'https://github.com/sunsongqiao2018/mahjongZero',
+  },
   {
     id: '01',
     title: 'VR Multiplayer Casino Game',

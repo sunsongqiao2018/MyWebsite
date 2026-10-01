@@ -6,6 +6,8 @@ export default function Projects() {
   const project =
     projects.find((item) => item.id === params.get('project')) || projects[0]
   const [imageIndex, setImageIndex] = useState(0)
+  const projectCount = String(projects.length).padStart(2, '0')
+  const projectPosition = String(projects.indexOf(project) + 1).padStart(2, '0')
   useEffect(() => setImageIndex(0), [project.id])
   function select(id) {
     setImageIndex(0)
@@ -14,7 +16,7 @@ export default function Projects() {
   return (
     <div className="page">
       <div className="page-meta">
-        <span>PROJECT ARCHIVE / 03 ENTRIES</span>
+        <span>PROJECT ARCHIVE / {projectCount} ENTRIES</span>
         <span>03 / PROJECTS</span>
       </div>
       <header className="page-heading">
@@ -74,10 +76,30 @@ export default function Projects() {
               <span key={tech}>{tech}</span>
             ))}
           </div>
+          {project.liveUrl && (
+            <a
+              className="button primary project-source"
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Play Mahjong Zero <span aria-hidden="true">↗</span>
+            </a>
+          )}
+          {project.sourceUrl && (
+            <a
+              className="text-link project-source"
+              href={project.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub <span aria-hidden="true">↗</span>
+            </a>
+          )}
         </div>
       </article>
       <div className="project-pagination">
-        <span>ARCHIVE / {project.id} OF 03</span>
+        <span>ARCHIVE / {projectPosition} OF {projectCount}</span>
         <button
           className="text-link"
           onClick={() =>
