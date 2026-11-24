@@ -1,17 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#161819" />
+    <meta name="theme-color" content="#171b1b" />
+    <script>
+      // Apply an explicit preference before CSS paints; otherwise start dark.
+      try {
+        if (localStorage.getItem('portfolio-theme-preference') === 'light') {
+          document.documentElement.dataset.theme = 'light';
+          document.querySelector('meta[name="theme-color"]').content = '#f7f8f6';
+        }
+      } catch (_) {}
+    </script>
     <meta
       name="description"
-      content="Songqiao Sun — software engineer and Unity game developer. Explore projects in multiplayer VR, immersive experiences, and interactive technology."
+      content="Songqiao Sun — AI software engineer and game developer. Exploring what AI makes possible in software and game development."
     />
     <link rel="icon" type="image/svg+xml" href="/MyWebsite/favicon.svg" />
     <title>Songqiao Sun's Portfolio</title>
-    <script type="module" crossorigin src="/MyWebsite/assets/index-0e637fc7.js"></script>
-    <link rel="stylesheet" href="/MyWebsite/assets/index-5f954994.css">
+    <script type="module" crossorigin src="/MyWebsite/assets/index-01c34c96.js"></script>
+    <link rel="stylesheet" href="/MyWebsite/assets/index-d6ab765f.css">
   </head>
   <body>
     <div id="root"></div>
