@@ -15,12 +15,7 @@ export default function Projects() {
   }
   return (
     <div className="page">
-      <div className="page-meta">
-        <span>PROJECT ARCHIVE / {projectCount} ENTRIES</span>
-        <span>03 / PROJECTS</span>
-      </div>
       <header className="page-heading">
-        <span className="eyebrow">IDEAS, BUILT AND PLAYED</span>
         <h1>
           Selected work<span className="yellow">.</span>
         </h1>
@@ -35,70 +30,80 @@ export default function Projects() {
             aria-pressed={item.id === project.id}
             onClick={() => select(item.id)}
           >
-            <span>/{item.id}</span>
             {item.category}
-            <span>↗</span>
           </button>
         ))}
       </div>
-      <article className="project-detail" key={project.id}>
-        <div className="project-visual">
-          <img
-            src={project.images[imageIndex] || project.images[0]}
-            alt={`${project.title} — view ${imageIndex + 1}`}
-          />
-          {project.images.length > 1 && (
-            <div className="image-controls">
-              {project.images.map((image, i) => (
-                <button
-                  key={image}
-                  aria-label={`Show project image ${i + 1}`}
-                  aria-pressed={i === imageIndex}
-                  onClick={() => setImageIndex(i)}
-                >
-                  0{i + 1}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-        <div className="project-story">
-          <div className="project-story-meta">
-            <span className="eyebrow">{project.category}</span>
-            <span className="big-number">{project.id}</span>
-          </div>
-          <h2>{project.title}</h2>
-          <p>{project.description}</p>
-          <span className="eyebrow">TECHNOLOGY STACK</span>
-          <div className="tags">
-            {project.technologies.map((tech) => (
-              <span key={tech}>{tech}</span>
-            ))}
-          </div>
-          {project.liveUrl && (
-            <a
-              className="button primary project-source"
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+      <div className="project-stage">
+        {projects.map((item) => {
+          const active = item.id === project.id
+          const viewIndex = active ? imageIndex : 0
+          return (
+            <article
+              key={item.id}
+              className={`project-detail${active ? ' is-active' : ''}`}
+              aria-hidden={!active}
+              inert={active ? undefined : ''}
             >
-              Play Mahjong Zero <span aria-hidden="true">↗</span>
-            </a>
-          )}
-          {project.sourceUrl && (
-            <a
-              className="text-link project-source"
-              href={project.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View on GitHub <span aria-hidden="true">↗</span>
-            </a>
-          )}
-        </div>
-      </article>
+              <div className="project-visual">
+                <img
+                  key={`${item.id}-${viewIndex}`}
+                  src={item.images[viewIndex] || item.images[0]}
+                  alt={`${item.title} — view ${viewIndex + 1}`}
+                />
+                {item.images.length > 1 && (
+                  <div className="image-controls">
+                    {item.images.map((image, i) => (
+                      <button
+                        key={image}
+                        aria-label={`Show project image ${i + 1}`}
+                        aria-pressed={i === viewIndex}
+                        onClick={() => setImageIndex(i)}
+                      >
+                        0{i + 1}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div className="project-story">
+                <div className="project-story-meta">
+                  <span className="eyebrow">{item.category}</span>
+                </div>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+                <div className="tags">
+                  {item.technologies.map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+                {item.liveUrl && (
+                  <a
+                    className="button primary project-source"
+                    href={item.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Play Mahjong Zero
+                  </a>
+                )}
+                {item.sourceUrl && (
+                  <a
+                    className="text-link project-source"
+                    href={item.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View on GitHub
+                  </a>
+                )}
+              </div>
+            </article>
+          )
+        })}
+      </div>
       <div className="project-pagination">
-        <span>ARCHIVE / {projectPosition} OF {projectCount}</span>
+        <span>{projectPosition} / {projectCount}</span>
         <button
           className="text-link"
           onClick={() =>
@@ -107,7 +112,7 @@ export default function Projects() {
             )
           }
         >
-          Next project <span>→</span>
+          Next project
         </button>
       </div>
     </div>

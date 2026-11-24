@@ -66,10 +66,6 @@ export default function App() {
         </main>
         <footer className="footer">
           <span>© {new Date().getFullYear()} SONGQIAO SUN</span>
-          <span>DESIGNED TO EXPLORE. BUILT TO CONNECT.</span>
-          <span>
-            PERSONAL PORTFOLIO <b>↗</b>
-          </span>
         </footer>
       </div>
     </HashRouter>

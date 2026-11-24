@@ -1,41 +1,33 @@
 # Songqiao Sun — Personal Portfolio
 
-A React portfolio with an Arknights-inspired spatial laboratory interface: profile-first pages with content-edge transitions where heading underlines and moving card borders reveal the content, persistent light/dark themes, geometric construction lines, a numbered navigation rail, natural-color portrait, condensed typography, signal-yellow accents, and structured project dossiers. Original photographs, projects, skills, and social destinations are retained. No game artwork or logos are included.
+A React portfolio inspired by the visual direction of [Hypergryph Careers](https://career.hypergryph.com/): a dark-by-default monochrome canvas, electric lime accents, oversized condensed type, construction grids, and original faceted S artwork. A horizontal navigation bar connects Overview, About, Projects, and Contact. The simplified homepage focuses on the introduction, four projects, and a contact invitation. The portrait stays in natural color, and the gallery, social links, and EmailJS integration are retained.
 
-## Run locally
+## Local development
 
 ```sh
 npm install
 npm run dev
 ```
 
-Open the printed `/MyWebsite/` URL. The current local production preview is available at `http://127.0.0.1:5173/MyWebsite/` while the preview process is running.
+Open the printed `/MyWebsite/` URL. Use `npm run build` for a production build and `npm run preview` to inspect it. The existing GitHub Pages base path and hash routes are preserved, including direct project links such as `/MyWebsite/#/projects?project=04`. `npm run deploy` is the separate GitHub Pages publication command.
 
-## Build and preview
+## Editing
 
-```sh
-npm run build
-npm run preview
-```
+- `src/styles/global.css`: colors, typography, page layouts, responsive breakpoints, and reduced-motion preferences.
+- `src/pages/Home.jsx`: homepage hero, expertise, project cards, and contact invitation.
+- `src/components/GeometricMark.jsx`: original faceted SVG sculpture.
+- `src/components/Navbar.jsx`: desktop links and accessible mobile navigation.
+- `src/components/ThemeToggle.jsx`: dark default with explicitly saved light/dark choices. `index.html` applies the choice before first paint. The new `portfolio-theme-preference` key replaces the old automatically saved default.
+- `src/components/HeroArtwork.jsx`: spring-smoothed pointer tilt, scroll depth, and offscreen-paused sculpture motion.
+- `src/components/ConnectedPage.jsx`: route exits and staggered viewport reveals that also reveal on keyboard focus.
+- `src/data.js`: project content, images, technology stacks, and skills.
+- `src/pages/`: About, Projects, and Contact pages.
+- `src/assets/`: original photographs and project screenshots.
 
-The output is in `dist/`. The existing GitHub Pages base path `/MyWebsite/` is preserved. Hash routes such as `/MyWebsite/#/projects?project=03` support directly opening and refreshing pages on static hosting, without server rewrites. The existing `npm run deploy` command publishes to GitHub Pages; this redesign is live at [sunsongqiao2018.github.io/MyWebsite](https://sunsongqiao2018.github.io/MyWebsite/).
+Motion includes masked headline and portrait entrances, staggered section reveals, project/image transitions, and hover feedback. Reduced-motion preferences disable decorative animation and parallax.
 
-## Edit content and design
+Typography uses Barlow, Barlow Condensed, and IBM Plex Mono through Google Fonts, with system fallbacks. The design uses original vector artwork rather than the reference site's branding or assets.
 
-- `src/data.js`: project descriptions, screenshots, categories, technologies, and skills.
-- `src/pages/`: Overview, About, Projects, and Contact.
-- `src/components/ThemeToggle.jsx`: persisted global theme selection.
-- `src/components/Navbar.jsx`: shared desktop navigation and mobile menu.
-- `src/styles/global.css`: design tokens, shared layouts, breakpoints, and reduced-motion styling.
-- `src/assets/`: original photographs and project images.
-- `public/favicon.svg`: original portfolio monogram.
+The contact form retains required-field validation, EmailJS delivery, sending/success/error feedback, and its existing three-message local daily limit. Real email delivery requires the existing service configuration and is not exercised during visual QA.
 
-The typography uses Barlow, Barlow Condensed, and IBM Plex Mono from Google Fonts, with system fallbacks if the font service cannot load. Visual direction reference: [Arknights official website](https://arknights.global/).
-
-The contact form retains the existing EmailJS service and template, with required-field validation, sending/success/error states, and the existing three-messages-per-day local browser limit. This local limit is a convenience only; service-side abuse protection remains the responsibility of the EmailJS configuration. The redesign was verified without sending real email.
-
-## Verification
-
-Production build passes. Browser checks covered desktop presentation, 390px mobile navigation and project layout, all four routes at 320px and 768px without horizontal overflow, project selection, Kinect image switching, gallery previous/next, required-field validation, and refresh of a nested hash route. No browser errors were observed in the final production preview.
-
-See [DEVELOPMENT.md](DEVELOPMENT.md) for the change log and remaining release steps. The repository already tracks dependencies and build outputs; existing tracked dependency files were left unchanged. New local tooling and Vite cache output are ignored.
+See `DEVELOPMENT.md` for the implementation log and verification details. GitHub Pages is published separately from the source branch.

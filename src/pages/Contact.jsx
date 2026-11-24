@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { FaGithub, FaLinkedin, FaFacebook, FaYoutube } from 'react-icons/fa'
-import { FiArrowUpRight, FiArrowRight } from 'react-icons/fi'
 const socials = [
   [
     'GitHub',
@@ -86,12 +85,7 @@ export default function Contact() {
   }
   return (
     <div className="page">
-      <div className="page-meta">
-        <span>COMMUNICATION CHANNEL</span>
-        <span>04 / CONTACT</span>
-      </div>
       <header className="page-heading">
-        <span className="eyebrow">GOOD THINGS START WITH A CONVERSATION</span>
         <h1>
           Let’s connect<span className="yellow">.</span>
         </h1>
@@ -102,8 +96,7 @@ export default function Contact() {
       </header>
       <div className="contact-layout">
         <section className="contact-socials">
-          <span className="eyebrow">01 / FIND ME ELSEWHERE</span>
-          <h2>Across the internet.</h2>
+          <h2>Find me online.</h2>
           <div className="social-list">
             {socials.map(([name, description, url, Icon]) => (
               <a key={name} href={url} target="_blank" rel="noreferrer">
@@ -112,15 +105,9 @@ export default function Contact() {
                   {name}
                   <small>{description}</small>
                 </div>
-                <FiArrowUpRight />
               </a>
             ))}
           </div>
-          <p className="contact-note">
-            From immersive games to thoughtful software.
-            <br />
-            Let’s see what we can create together.
-          </p>
         </section>
         <form
           className="contact-form light-panel"
@@ -128,9 +115,8 @@ export default function Contact() {
           onSubmit={submit}
           aria-busy={busy}
         >
-          <span className="eyebrow">02 / DIRECT MESSAGE</span>
           <h2>
-            Send a transmission<span> ↗</span>
+            Send a message
           </h2>
           <div className="form-row">
             <div>
@@ -175,7 +161,7 @@ export default function Contact() {
           <div className="form-bottom">
             <span>* Required fields</span>
             <button className="button primary" disabled={busy}>
-              {busy ? 'SENDING…' : 'SEND MESSAGE'} <FiArrowRight />
+              {busy ? 'SENDING…' : 'SEND MESSAGE'}
             </button>
           </div>
           <p

@@ -2,7 +2,7 @@
 
 ## Current state
 
-The portfolio now uses a profile-first layout with content-edge reveal transitions and persistent light/dark themes. The piano archive has been removed. The live site remains https://sunsongqiao2018.github.io/MyWebsite/.
+The portfolio now uses a Hypergryph Careers-inspired design with horizontal navigation, electric lime accents, large condensed typography, original faceted S artwork, and a dark default with explicit persistent theme choices. The simplified homepage uses layered entrance animation, pointer/scroll depth, offscreen-paused idle motion, and staggered content reveals. The homepage introduces the work through Turing’s question, “Can machines think?” About uses a conversational first-person introduction, and project selection keeps the detail layout stable. The existing GitHub Pages destination is https://sunsongqiao2018.github.io/MyWebsite/.
 
 ## Next steps
 
@@ -10,6 +10,17 @@ The portfolio now uses a profile-first layout with content-edge reveal transitio
 - Confirm real EmailJS delivery on the deployment domain; no email was sent during verification.
 
 ## Log
+
+### 2026-11-24 — Simplify content and develop the motion
+
+Made dark mode the pre-paint default, preserving explicit new theme choices without inheriting the old automatically saved light default. Removed the scroll instruction, duplicate slogans, repeated identity labels, homepage expertise cards, decorative route metadata, repeated project buttons/technology lists, and oversized contact banner. Added masked headline and portrait entrances, unfolding lime geometry, spring-smoothed pointer/scroll movement, offscreen-paused idle animation, staggered viewport reveals, project/image transitions, and hover feedback. Focus reveals its panel immediately; reduced-motion preferences bypass decorative movement. Existing content and functional routes remain intact.
+
+Validation: production build and whitespace check passed; theme bootstrap tested with absent, light, dark, invalid, and inaccessible storage; browser verified dark default, explicit light persistence, project image switching, gallery navigation, scroll-driven transforms, offscreen idle pausing, section reveals, and mobile navigation/contact validation. All four routes passed overflow checks at 320px, 768px, and 1440px. A 390px mobile navigation check passed, including immediate selection during the menu fade. Browser error logs were empty. No real email was sent.
+
+
+### 2026-11-24 — Hypergryph Careers visual direction
+
+Replaced the navigation rail and dense dossier layout with a full-width editorial homepage, horizontal navigation, bright grid canvas, electric lime planes, oversized headlines, and an original lightweight SVG sculpture. Reworked shared styles for About, Projects, and Contact; retained the natural-color portrait, four projects, gallery, EmailJS integration, hash routes, persistent themes, mobile menu, keyboard focus styles, and reduced-motion support. No new dependencies or copied reference assets. Source and tracked production output are updated locally. Validation: production build and git diff whitespace check passed. Browser checks covered all four routes at 320px, 768px, and 1024px without horizontal overflow; desktop and 390px mobile visual review; mobile navigation; Mahjong and Kinect image selection; direct project URL refresh; gallery previous/next; light/dark persistence after reload; section scrolling; and required-field contact validation. Browser error log was empty. No real email was sent.
 
 ### 2026-09-12 — Make geometry reveal the elements themselves
 

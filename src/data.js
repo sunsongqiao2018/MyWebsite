@@ -5,17 +5,17 @@ import project3Detail from './assets/projects/project3_2.png'
 import mahjongLobby from './assets/projects/mahjong-zero-lobby.png'
 import mahjongTable from './assets/projects/mahjong-zero-table.png'
 export const skills = [
-  'C#',
-  'ASP.NET',
-  'Unity3D',
+  'Python',
+  'TypeScript',
   'C++',
-  'Unreal',
-  'AWS Cloud Services',
-  'JavaScript',
+  'C#',
   'React',
-  'React Native',
-  'CI/CD',
-  'Test Automation',
+  'Node.js',
+  'PostgreSQL',
+  'AWS',
+  'Unity',
+  'Unreal Engine',
+  'LangChain',
 ]
 export const projects = [
   {

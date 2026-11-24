@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { skills } from '../data'
 import gallery1 from '../assets/gallery/gallery_1.jpeg'
 import gallery2 from '../assets/gallery/gallery_2.jpeg'
 import gallery3 from '../assets/gallery/gallery_3.jpeg'
@@ -8,91 +7,73 @@ const gallery = [
     image: gallery1,
     title: 'Paw friends / Haile',
     description:
-      'Our lovely longhair friend. Eating is always her top priority, and milk makes her sing.',
+      'Haile is our longhaired cat. Food comes first, and if there’s milk around, she’ll sing for it.',
   },
   {
     image: gallery2,
     title: 'Paw friends / Hebe',
     description:
-      'Our playful second cat. In winter, you’ll find her sleeping on the warm vents around the house.',
+      'Hebe is the playful one. In winter, if I can’t find her, I check the heating vents first.',
   },
   {
     image: gallery3,
     title: 'The everyday ritual',
     description:
-      'A little latte art, and the sip of coffee that starts the day.',
+      'Most mornings start with coffee. I like trying my hand at a little latte art, too.',
   },
 ]
 export default function About() {
   const [index, setIndex] = useState(0)
   return (
     <div className="page">
-      <div className="page-meta">
-        <span>PERSONAL FILE / SS–001</span>
-        <span>02 / ABOUT ME</span>
-      </div>
       <header className="page-heading">
-        <span className="eyebrow">THE PERSON BEHIND THE CODE</span>
         <h1>
-          Curiosity.
-          <br />
-          Made interactive<span className="yellow">.</span>
+          About me<span className="yellow">.</span>
         </h1>
-        <p>
-          A software engineer, game developer, and lifelong explorer of what
-          comes next.
-        </p>
       </header>
-      <section className="about-grid">
-        <div className="light-panel">
-          <span className="eyebrow">01 / BACKGROUND</span>
-          <h2>
-            Technology meets
-            <br />a little imagination.
-          </h2>
-          <p>
-            Hello! I’m Songqiao Sun, a software engineer specializing in game
-            development and immersive experiences. With a Master’s degree in
-            Computer Science, I’m drawn to the possibilities of interactive
-            digital environments.
+      <section className="about-letter" aria-labelledby="intro-heading">
+        <h2 id="intro-heading">Hello,<br />I’m Songqiao.</h2>
+        <div className="letter-copy">
+          <p className="letter-lead">
+            I’m an AI software engineer and game developer based in the
+            Greater Toronto Area. My favorite part of building something
+            is the moment an idea finally works and I can hand it to
+            someone to try.
           </p>
           <p>
-            My journey began with a fascination for video games. It grew into a
-            passion for creating experiences of my own — combining technical
-            excellence with thoughtful, user-centered design.
+            I’ve spent the past seven years building games and interactive
+            software, and more recently I’ve been building with AI. One of
+            my favorite things about working on a multiplayer VR game was
+            going into the game myself and playing a few rounds with the
+            people we built it for.
           </p>
-        </div>
-        <div className="dark-panel">
-          <span className="eyebrow">02 / TOOLKIT</span>
-          <h2>Tools of the trade.</h2>
-          <p>From multiplayer VR to cloud services and web applications.</p>
-          <div className="tags">
-            {skills.map((skill) => (
-              <span key={skill}>{skill}</span>
-            ))}
-          </div>
-          <div className="credential">
-            <span>MSc</span>
-            <div>
-              COMPUTER SCIENCE<small>Academic foundation</small>
-            </div>
-          </div>
+          <p>
+            I studied Multimedia & Digital Art Design before doing my
+            master’s in Computer Science at the University of Windsor.
+            Both still show up in my work. I like figuring out how things
+            work, and I care just as much about how they feel to use.
+          </p>
+          <p>
+            What excites me about AI is finding out what I can make now
+            that I couldn’t before. Sometimes that’s a tool I’d want to
+            use again tomorrow. Sometimes it’s a game I’d play one more
+            round of. I’d love to keep trying those ideas with people
+            who are just as curious about what might work.
+          </p>
         </div>
       </section>
       <section className="life-section">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">03 / OFF THE CLOCK</span>
             <h2>
-              A life beyond the screen<span className="yellow"> /</span>
+              Beyond the screen.
             </h2>
           </div>
         </div>
         <div className="gallery">
-          <img src={gallery[index].image} alt={gallery[index].title} />
+          <img key={index} src={gallery[index].image} alt={gallery[index].title} />
           <div className="gallery-copy">
             <div aria-live="polite">
-              <span className="eyebrow">PERSONAL SNAPSHOTS / 0{index + 1}</span>
               <h3>{gallery[index].title}</h3>
               <p>{gallery[index].description}</p>
             </div>
@@ -103,14 +84,14 @@ export default function About() {
                   setIndex((index + gallery.length - 1) % gallery.length)
                 }
               >
-                ←
+                ‹
               </button>
               <span>0{index + 1} / 03</span>
               <button
                 aria-label="Next photo"
                 onClick={() => setIndex((index + 1) % gallery.length)}
               >
-                →
+                ›
               </button>
             </div>
           </div>
